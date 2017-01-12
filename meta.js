@@ -21,7 +21,7 @@ module.exports = {
       }
   },
   "filters":{
-    "./test": "test"
+    "test/*": "test"
   },
   "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://github.com/waka-templates/vue-webpack"
 }
