@@ -14,7 +14,11 @@ module.exports = {
       "author"     : {
           "type"   : "string",
           "message": "Author"
+      },
+      "test": {
+          "type": "confirm",
+          "message": "Need test?"
       }
   },
-  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
+  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://github.com/waka-templates/vue-webpack"
 }
