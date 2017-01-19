@@ -39,8 +39,6 @@ jspm_packages
 .node_repl_history
 
 .idea
-!/views/online/index.html
-/views/online
 public/dist
 assets
 .DS_Store
