@@ -40,5 +40,5 @@ jspm_packages
 
 .idea
 public/dist
-assets
+dist
 .DS_Store
