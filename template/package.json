@@ -1,8 +1,8 @@
 {
-  "name": "{{name}}",
+  "name": "11",
   "version": "1.0.0",
-  "description": "{{description}}",
-  "author": "{{author}}",
+  "description": "11",
+  "author": "11",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./build/dev-server.js",
     "build": "cross-env NODE_ENV=production node ./build/webpack.prod.config.js"
@@ -22,6 +22,7 @@
       "css-loader": "^0.26.1",
       "vue-style-loader": "^1.0.0",
       "url-loader": "^0.5.7",
+      "file-loader": "^0.9.0",
       "extract-text-webpack-plugin": "^1.0.1",
       "html-webpack-plugin": "^2.26.0",
       "cross-env": "^3.1.4",
