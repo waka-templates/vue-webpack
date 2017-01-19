@@ -19,29 +19,29 @@ devConfig.devServer = {
     hot: true,
     noInfo: false,
     quite: false,
-    port:3000,
+    port: config.dev.port,
     debug:true,
     inline: true,
     progress: true,
     historyApiFallback: true,
     colors: true,
     stats: 'normal',
-    contentBase:'/',
-    publicPath:"/"
+    contentBase: config.dev.assetsPublicPath,
+    publicPath: config.dev.assetsPublicPath
 };
 
 module.exports = Object.assign({},devConfig,{
     entry: {
         app:[
             "webpack/hot/dev-server",
-            "webpack-dev-server/client?http://localhost:3000/",
+            `webpack-dev-server/client?http://localhost:${config.dev.port}/`,
             path.resolve(__dirname, '../src/index.js')
         ]
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '../assets/'),
-        publicPath:"/",
+        path: config.dev.assetsRoot,
+        publicPath: config.dev.assetsPublicPath,
         sourceMapFilename: '[file].map'
     },
     devtool:'#cheap-module-eval-source-map'

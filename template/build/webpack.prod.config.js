@@ -9,7 +9,7 @@ let config = require('../config');
 prodConfig.plugins = (prodConfig.plugins || []).concat([
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
-        'process.env': config.prod.env
+        'process.env': config.build.env
     }),
     new webpack.optimize.UglifyJsPlugin({
         compress: {
@@ -29,8 +29,8 @@ module.exports = Object.assign({},prodConfig,{
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '../assets/'),
-        publicPath: '/',
+        path: config.build.assetsRoot,
+        publicPath: config.build.assetsPublicPath,
         sourceMapFilename: '[file].map'
     },
     devtool:'#source-map'
