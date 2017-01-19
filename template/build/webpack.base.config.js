@@ -4,7 +4,7 @@ let path = require('path');
 let webpack = require('webpack');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-let vendor = ['vue', 'vuex'];
+let vendor = ['vue'];
 let projectRoot = path.resolve(__dirname, '../');
 
 module.exports = {
@@ -43,8 +43,10 @@ module.exports = {
     resolve:{
         extensions:["",".js",".vue"],
         fallback: [path.join(__dirname, '../node_modules')],
-        '@src': path.resolve(__dirname, '../src'),
-        '@components': path.resolve(__dirname, '../src/components')
+        alias:{
+            '@src': path.resolve(__dirname, '../src'),
+            '@components': path.resolve(__dirname, '../src/components')
+        }
     },
     resolveLoader: {
         fallback: [path.join(__dirname, '../node_modules')]

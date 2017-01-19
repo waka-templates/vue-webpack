@@ -2,11 +2,11 @@
 
 let path = require('path');
 
-export default {
+module.exports =  {
     dev:{
-        env: require('./dev.env.js');
+        env: require('./dev.env.js')
     },
     prod:{
-        env: require('./prod.env.js');
+        env: require('./prod.env.js')
     }
 }
