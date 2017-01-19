@@ -2,25 +2,16 @@
 
 let path = require('path');
 let webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let devConfig = require('./webpack.base.config');
 let config = require('../config');
 
 devConfig.plugins = (devConfig.plugins || []).concat([
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
         'process.env': config.dev.env
     }),
-    new webpack.NoErrorsPlugin(),
-
-    // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    })
+    new webpack.NoErrorsPlugin()
 ]);
 
 // see https://webpack.github.io/docs/webpack-dev-server.html
@@ -35,8 +26,8 @@ devConfig.devServer = {
     historyApiFallback: true,
     colors: true,
     stats: 'normal',
-    contentBase:'/assets',
-    publicPath:"http://localhost:3000/"
+    contentBase:'/',
+    publicPath:"/"
 };
 
 module.exports = Object.assign({},devConfig,{
@@ -50,7 +41,7 @@ module.exports = Object.assign({},devConfig,{
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../assets/'),
-        publicPath:"http://localhost:3000/",
+        publicPath:"/",
         sourceMapFilename: '[file].map'
     },
     devtool:'#cheap-module-eval-source-map'

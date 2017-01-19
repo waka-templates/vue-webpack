@@ -7,9 +7,7 @@ let prodConfig = require('./webpack.base.config');
 let config = require('../config');
 
 prodConfig.plugins = (prodConfig.plugins || []).concat([
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
-
     new webpack.DefinePlugin({
         'process.env': config.prod.env
     }),
@@ -32,7 +30,7 @@ module.exports = Object.assign({},prodConfig,{
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../assets/'),
-        publicPath: path.resolve(__dirname, '/assets'),
+        publicPath: '/',
         sourceMapFilename: '[file].map'
     },
     devtool:'#source-map'

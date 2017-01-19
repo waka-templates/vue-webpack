@@ -2,6 +2,7 @@
 
 let path = require('path');
 let webpack = require('webpack');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 let vendor = ['vue'];
@@ -53,9 +54,17 @@ module.exports = {
     },
     plugins:[
         new ExtractTextPlugin("styles.css"),
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name:"vendor",
             filename:"vendor.js"
+        }),
+
+        // https://github.com/ampedandwired/html-webpack-plugin
+        new HtmlWebpackPlugin({
+          filename: 'index.html',
+          template: 'index.html',
+          inject: true
         })
     ]
 };
