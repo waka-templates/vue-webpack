@@ -14,5 +14,5 @@ server.listen(3000, 'localhost', (err) => {
         console.error(err);
         return;
     }
-    console.log(`open your browser and visit localhost:${config.dev.port}\n`);
+    console.log(`open your browser and visit localhost:${config.dev.port} when bundle is valid.\n`);
 });
