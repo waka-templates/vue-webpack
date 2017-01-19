@@ -1,7 +1,8 @@
 <template lang="html">
-    <p class="desc">
-        {{desc}}
-    </p>
+    <div class="desc">
+        <p>{{desc}}</p>
+        <img src="../assets/logo.png" alt="logo">
+    </div>
 </template>
 
 <script>
