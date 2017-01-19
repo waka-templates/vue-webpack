@@ -27,11 +27,6 @@ module.exports = {
                 test:/\.css$/,
                 loader:ExtractTextPlugin.extract('vue-style','css')
             },
-            // 
-            // {
-            //     test: /\.(png|jpg|gif|jpeg)$/,
-            //     loader: 'file'
-            // },
             {
                 test: /\.(png|jpg|gif|jpeg)$/,
                 loader: 'url',
