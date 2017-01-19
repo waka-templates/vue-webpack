@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <h3>{{name}}</h3>
+        <h3>\{{title}}</h3>
         <hello />
     </div>
 </template>
@@ -17,7 +17,7 @@
     export default{
         data(){
             return {
-                name: 'vue-webpack'
+                title: 'vue-webpack'
             }
         },
 
