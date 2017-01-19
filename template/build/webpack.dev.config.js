@@ -27,7 +27,7 @@ devConfig.devServer = {
     historyApiFallback: true,
     colors: true,
     stats: 'normal',
-    contentBase:'/public/assets',
+    contentBase:'/',
     publicPath:"http://localhost:3000/assets"
 };
 
@@ -41,7 +41,7 @@ module.exports = Object.assign({},devConfig,{
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '../public/assets/'),
+        path: path.resolve(__dirname, './assets/'),
         publicPath:"http://localhost:3000/assets",
         sourceMapFilename: '[file].map'
     },
