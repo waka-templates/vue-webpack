@@ -26,7 +26,7 @@ module.exports = {
       },
       "test": {
           "type": "confirm",
-          "message": "Need test?(这是meta测试，模板暂时没有提供单元测试)"
+          "message": "Setup unit tests with Karma + Mocha?"
       }
   },
   "filters":{
