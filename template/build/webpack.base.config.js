@@ -49,6 +49,11 @@ module.exports = {
     resolveLoader: {
         fallback: [path.join(__dirname, '../node_modules')]
     },
+    vue:{
+        postcss: [require('autoprefixer')({
+          browsers: ['last 5 versions']
+        })]
+    },
     plugins:[
         new ExtractTextPlugin("styles.css"),
         new webpack.optimize.OccurenceOrderPlugin(),
