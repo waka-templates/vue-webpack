@@ -35,6 +35,10 @@ module.exports = {
                     name: '[name].[ext]?[hash]'
                 }
             },
+            {
+                test: /\.(ttf|eot|svg)$/,
+                loader: "file-loader"
+            }
         ]
     },
     resolve:{
