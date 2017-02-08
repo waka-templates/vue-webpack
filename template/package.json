@@ -5,7 +5,7 @@
   "author": "{{author}}",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./build/dev-server.js",
-    "build": "cross-env NODE_ENV=production node ./build/webpack.prod.config.js"{{#test}},
+    "build": "./node_modules/.bin/webpack --config ./build/webpack.prod.config.js --progress"{{#test}},
     "test": "cross-env NODE_ENV=test ./node_modules/.bin/karma start test/karma.conf.js"{{/test}}
   },
   "dependencies": {
