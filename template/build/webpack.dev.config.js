@@ -6,6 +6,11 @@ let webpack = require('webpack');
 let devConfig = require('./webpack.base.config');
 let config = require('../config');
 
+devConfig.module.loaders.unshift({
+    test:/\.css$/,
+    loaders: 'vue-style!css!postcss'
+});
+
 devConfig.plugins = (devConfig.plugins || []).concat([
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({

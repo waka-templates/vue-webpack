@@ -3,7 +3,6 @@
 let path = require('path');
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
-let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 let vendor = ['vue'];
 let projectRoot = path.resolve(__dirname, '../');
@@ -22,10 +21,6 @@ module.exports = {
                   path.join(projectRoot, 'src')
                 ],
                 exclude: /node_modules/
-            },
-            {
-                test:/\.css$/,
-                loader:ExtractTextPlugin.extract('vue-style','css')
             },
             {
                 test: /\.(png|jpg|gif|jpeg)$/,
@@ -59,7 +54,6 @@ module.exports = {
         })]
     },
     plugins:[
-        new ExtractTextPlugin("styles.css"),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name:"vendor",
